@@ -20,7 +20,8 @@ public class DataBaseClass {
                                 description TEXT,
                                 max INTEGER,
                                 online INTEGER,
-                                version TEXT
+                                version TEXT,
+                                last_seen DATETIME
                             )
                         """);
             }
@@ -41,8 +42,8 @@ public class DataBaseClass {
             String version
     ) {
         try (PreparedStatement ps = connection.prepareStatement("""
-                    INSERT INTO server (ip, description, max, online, version)
-                    VALUES (?, ?, ?, ?, ?)
+                    INSERT INTO server (ip, description, max, online, version, last_seen)
+                    VALUES (?, ?, ?, ?, ?, datetime('now', 'localtime'))
                     ON CONFLICT(ip) DO UPDATE SET
                         online = excluded.online,
                         max = excluded.max,
