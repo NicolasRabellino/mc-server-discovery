@@ -1,0 +1,15 @@
+{
+        "version": {
+          "name": "Oxide 1.21.10",
+          "protocol": 773
+        },
+        "players": {
+          "max": -1,
+          "online": 0,
+          "sample": []
+        },
+        "description": {
+          "text": "Hello oxide!"
+        },
+        "enforcesSecureChat": false
+      }
